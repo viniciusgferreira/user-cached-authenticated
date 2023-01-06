@@ -1,0 +1,32 @@
+{
+  "name": "user-cached-authenticated",
+  "version": "1.0.0",
+  "description": "API to manage Users with JWT Authentication and Redis Cache",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx tsnd --respawn --transpile-only src/server.ts",
+    "build": "npx tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viniciusgferreira/user-cached-authenticated.git"
+  },
+  "keywords": [],
+  "author": "viniciusgferreira <vinicius.gf@outlook.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/viniciusgferreira/user-cached-authenticated/issues"
+  },
+  "homepage": "https://github.com/viniciusgferreira/user-cached-authenticated#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.15",
+    "ts-node-dev": "^2.0.0",
+    "tsc": "^2.0.4"
+  }
+}
