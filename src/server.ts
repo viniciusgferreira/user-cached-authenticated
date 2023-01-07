@@ -13,19 +13,19 @@ const MONGO_NAME_STR = `mongodb://${mongo}:27017`;
 
 mongoose.connect(MONGO_NAME_STR)
   .then(() => {
-    console.log('Conectado ao MongoDB');
+    console.log('Conneted to MongoDB');
 
     // Create express server
     const app = express();
-    const port = process.env.PORT || 3001;
+    const port = process.env.PORT || 3000;
 
     // JSON
     app.use(express.json());
 
     // ROUTER
-    app.use('/user-service', router);
+    app.use(router);
 
-    app.listen(port, () => console.log(`API User Service is running on port http://localhost:${port}`));
+    app.listen(port, () => console.log(`Server is running on port http://localhost:${port}`));
 
   })
   .catch((err) => console.log(err));
