@@ -8,8 +8,9 @@ dotenv.config();
 
 // MONGODB CONNECTION
 const mongo = process.env.MONGO;
-console.log(mongo);
-const MONGO_NAME_STR = `mongodb://${mongo}:27017`;
+const MONGO_PORT = process.env.MONGO_PORT;
+console.log(`mongodb://${mongo}:${MONGO_PORT}`);
+const MONGO_NAME_STR = `mongodb://${mongo}:${MONGO_PORT}`;
 
 mongoose.connect(MONGO_NAME_STR)
   .then(() => {
