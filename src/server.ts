@@ -12,9 +12,10 @@ const MONGO_PORT = process.env.MONGO_PORT;
 console.log(`mongodb://${mongo}:${MONGO_PORT}`);
 const MONGO_NAME_STR = `mongodb://${mongo}:${MONGO_PORT}`;
 
+mongoose.set('strictQuery', true);
 mongoose.connect(MONGO_NAME_STR)
   .then(() => {
-    console.log('Conneted to MongoDB');
+    console.log('Connected to MongoDB');
 
     // Create express server
     const app = express();
