@@ -3,7 +3,7 @@ import { Types } from 'mongoose';
 
 export function generateToken(id: Types.ObjectId) {
   const secret = String(process.env.SECRET);
-  const expirationSeconds = 300;
+  const expirationSeconds = 3000;
   const token = jwt.sign({ id }, secret, {
     expiresIn: expirationSeconds
   });
