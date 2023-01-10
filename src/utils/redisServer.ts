@@ -10,3 +10,8 @@ export async function getRedisValue(key: string) {
   const value = await client.get(key);
   return value;
 }
+
+// REDIS SET
+export async function setRedisValue(key: string, value: string) {
+  await client.set(key, value, { EX: 3600 });
+}
