@@ -1,5 +1,6 @@
 import bcrypt from 'bcrypt';
 import { User } from '../models/User-model';
+import { generateToken } from '../utils/generateToken';
 
 export const loginUserService = async (user: { username: string; password: string; }) => {
   try {
@@ -11,10 +12,8 @@ export const loginUserService = async (user: { username: string; password: strin
     // CHECK PASSWORD MATCH
     if (await bcrypt.compare(user.password, userFromDb.password)) {
       //GENERATE JWT
-      return true;
+      return generateToken(userFromDb._id);
     }
-
-
 
     return false;
   } catch (err) {
