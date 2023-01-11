@@ -7,6 +7,6 @@ export function generateToken(id: Types.ObjectId) {
   const token = jwt.sign({ id }, secret, {
     expiresIn: expirationSeconds
   });
-  console.log(`token generated with ${expirationSeconds}`);
+  console.log(`token generated with ${expirationSeconds} seconds expiration time`);
   return token;
 }
