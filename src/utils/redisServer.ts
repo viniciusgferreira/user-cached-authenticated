@@ -4,6 +4,7 @@ import { createClient } from 'redis';
 const client = createClient();
 client.connect();
 client.on('error', (err) => console.log('Redis Client Error', err));
+client.on('ready', () => console.log('Redis Client connected'));
 
 // REDIS GET
 export async function getRedisValue(key: string) {
