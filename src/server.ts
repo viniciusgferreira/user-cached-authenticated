@@ -25,7 +25,7 @@ mongoose.connect(MONGO_NAME_STR)
     app.use(express.json());
 
     // ROUTER
-    app.use(router);
+    app.use('/api/v1/', router);
 
     app.listen(port, () => console.log(`Server is running on port http://localhost:${port}`));
 
