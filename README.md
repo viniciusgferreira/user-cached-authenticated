@@ -31,7 +31,7 @@ To get a Json web token, you need to login with a valid user/password (GET /logi
 }
 ```
 
-## JSON response example of login resource
+#### JSON response example of login resource
 ```js
 {
 	"auth": true,
@@ -41,7 +41,7 @@ To get a Json web token, you need to login with a valid user/password (GET /logi
 
 ### GET /user/:id
 
-## JSON response
+#### JSON response example of get user by id resource
 
 ```js
 {
