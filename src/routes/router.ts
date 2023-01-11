@@ -12,7 +12,7 @@ router.post('/register', registerUserController);
 
 // LIST USERS
 router.get('/users', verifyAuth, listUserController);
-router.get('/users/:id', listUserByIdController);
+router.get('/users/:id', verifyAuth, listUserByIdController);
 
 // LOGIN
 router.post('/login', loginUserController);
