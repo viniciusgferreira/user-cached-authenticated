@@ -12,7 +12,7 @@ export function verifyAuth(req: Request, res: Response, next: NextFunction) {
     return next();
 
   } catch (err) {
-    console.log(err);
+    if (err instanceof Error) { console.log(`request forbidden: ${err.message}`); }
     return res.status(401).json({ auth: false, message: 'Token invalid' });
   }
 }
