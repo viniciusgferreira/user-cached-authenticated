@@ -6,6 +6,14 @@ This is an API to get and add Users with JWT Authentication and Redis Cache
 This project aims to show how to do authentication with JWT and use Redis as cache of user info.
 The time to retrieve user information on cache is a lot faster than from the database MongoDb.
 
+## Tech Stack
+Node.js  
+Express.js  
+Redis  
+MongoDB  
+JWT - json web token  
+
+
 ## API
 
 All endpoints live under the URL /api/v1/ and then generally follow the REST architecture.
