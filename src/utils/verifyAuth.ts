@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
 
 export function verifyAuth(req: Request, res: Response, next: NextFunction) {
-  const token = req.header('x-acess-token');
+  const token = req.header('Authorization');
 
   if (!token) { return res.status(401).json({ auth: false, message: 'Token not provided' }); }
 
