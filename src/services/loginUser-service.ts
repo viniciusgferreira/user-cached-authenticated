@@ -7,7 +7,7 @@ export const loginUserService = async (user: { username: string; password: strin
     const userFromDb = await User.findOne({ 'username': user.username });
 
     // CHECK IF USER EXISTS
-    if (!userFromDb) { return false; }
+    if (!userFromDb) { return undefined; }
 
     // CHECK PASSWORD MATCH
     if (await bcrypt.compare(user.password, userFromDb.password)) {
@@ -15,7 +15,7 @@ export const loginUserService = async (user: { username: string; password: strin
       return generateToken(userFromDb._id);
     }
 
-    return false;
+    return undefined;
   } catch (err) {
     console.log(err);
   }
